@@ -49,8 +49,8 @@ DiffDriveController::DiffDriveController()
 : controller_interface::ControllerInterface(),
   // dummy limiter, will be created in on_configure
   // could be done with shared_ptr instead -> but will break ABI
-  limiter_angular_(std::numeric_limits<double>::quiet_NaN()),
-  limiter_linear_(std::numeric_limits<double>::quiet_NaN())
+  limiter_linear_(std::numeric_limits<double>::quiet_NaN()),
+  limiter_angular_(std::numeric_limits<double>::quiet_NaN())
 {
 }
 
