@@ -420,7 +420,17 @@ controller_interface::CallbackReturn DiffDriveController::on_configure(
           "time, this message will only be shown once");
         msg->header.stamp = get_node()->get_clock()->now();
       }
-      (void)received_velocity_msg_ptr_.bounded_push(std::move(msg));
+      for (size_t i = 0; i < 5; ++i)
+      {
+        if (received_velocity_msg_ptr_.bounded_push(msg))
+        {
+          break;
+        }
+        RCLCPP_WARN(
+          get_node()->get_logger(),
+          "Velocity command could not be stored in the queue, trying again");
+        std::this_thread::sleep_for(100us);
+      }
     });
 
   // initialize odometry publisher and message
