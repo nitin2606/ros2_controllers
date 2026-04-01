@@ -33,6 +33,7 @@ joint_state_broadcaster
 
 omni_wheel_drive_controller
 *****************************
+* 🚀 The omni_wheel_drive_controller was added 🎉 (`#1535 <https://github.com/ros-controls/ros2_controllers/pull/1535>`_).
 * Parameter ``tf_frame_prefix_enable`` got deprecated and will be removed in a future release (`#2073 <https://github.com/ros-controls/ros2_controllers/pull/2073>`_).
 * Now any tilde ("~") character in ``tf_frame_prefix`` is substituted with node namespace. (`#2073 <https://github.com/ros-controls/ros2_controllers/pull/2073>`_).
 * Set odometry service added to be used at runtime. (`#2148 <https://github.com/ros-controls/ros2_controllers/pull/2148>`_).
@@ -44,10 +45,6 @@ joint_trajectory_controller
   <https://github.com/ros-controls/ros2_controllers/pull/1191>`__. With this the controller
   "stretches the time" with which it progresses in the trajectory. Scaling can either be set
   manually or it can be synchronized with the hardware. See :ref:`jtc_speed_scaling` for details.
-
-omni_wheel_drive_controller
-*********************************
-* 🚀 The omni_wheel_drive_controller was added 🎉 (`#1535 <https://github.com/ros-controls/ros2_controllers/pull/1535>`_).
 
 pid_controller
 *******************************
